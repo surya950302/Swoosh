@@ -15,6 +15,7 @@ class LeagueActivity : BaseActivity() {
     }
     fun leagueNextClicked(view : View){
         val skillIntent = Intent(this,SkillActivity :: class.java )
+        skillIntent.putExtra(EXTRA_LEAGUE, selectedLeague)
         if(selectedLeague != ""){
             startActivity(skillIntent)
         }

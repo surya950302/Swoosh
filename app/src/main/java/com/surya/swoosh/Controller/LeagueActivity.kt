@@ -1,10 +1,11 @@
-package com.surya.swoosh
+package com.surya.swoosh.Controller
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.surya.swoosh.Utilities.EXTRA_LEAGUE
+import com.surya.swoosh.R
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
@@ -14,7 +15,7 @@ class LeagueActivity : BaseActivity() {
         setContentView(R.layout.activity_league)
     }
     fun leagueNextClicked(view : View){
-        val skillIntent = Intent(this,SkillActivity :: class.java )
+        val skillIntent = Intent(this, SkillActivity:: class.java )
         skillIntent.putExtra(EXTRA_LEAGUE, selectedLeague)
         if(selectedLeague != ""){
             startActivity(skillIntent)
@@ -40,6 +41,6 @@ class LeagueActivity : BaseActivity() {
         mensButton.isChecked = false
         womensButton.isChecked = false
 
-        selectedLeague = "coed"
+        selectedLeague = "co-ed"
     }
 }
